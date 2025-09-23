@@ -109,6 +109,39 @@
             "in": "path",
             "required": true,
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "Carlos"
+                },
+                "lastname": {
+                  "example": "Ramirez"
+                },
+                "email": {
+                  "example": "carlos.ramirez@example.com"
+                },
+                "password": {
+                  "example": "password123"
+                },
+                "address": {
+                  "example": "Av. Siempre Viva 742, Lima"
+                },
+                "phone": {
+                  "example": "+51987654321"
+                },
+                "role": {
+                  "example": "user",
+                  "default": "user"
+                }
+              },
+              "required": ["name", "lastname", "email", "password"]
+            }
           }
         ],
         "responses": {
