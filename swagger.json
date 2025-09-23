@@ -45,8 +45,27 @@
             "schema": {
               "type": "object",
               "properties": {
+                "name": {
+                  "example": "name"
+                },
+                "lastname": {
+                  "example": "lastname"
+                },
                 "email": {
-                  "example": "any"
+                  "example": "emailz@example.com"
+                },
+                "password": {
+                  "example": "password123"
+                },
+                "address": {
+                  "example": "Av. Siempre Viva 742, Lima"
+                },
+                "phone": {
+                  "example": "+51987654321"
+                },
+                "role": {
+                  "example": "user",
+                  "default": "user"
                 }
               }
             }
