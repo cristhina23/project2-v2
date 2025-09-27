@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { getAllProducts, getProductById, createProduct, updateProductById, deleteProductById  } = require('../controllers/productController')
+const { isAuthenticated } = require('../middlewares/authenticate');
 
 router.get('/',
   /* #swagger.tags = ['Products']
@@ -14,11 +15,13 @@ router.get('/',
   router.post('/',
   /* #swagger.tags = ['Products']
      #swagger.description = 'Create a new product' */
+   isAuthenticated,  
   createProduct)
 
   router.put('/:id',
    /* #swagger.tags = ['Products']
      #swagger.description = 'Update a product' */
+   isAuthenticated,
   updateProductById
 );
 
@@ -26,6 +29,7 @@ router.get('/',
    router.delete('/:id',
     /* #swagger.tags = ['Products']
      #swagger.description = 'Delete a product' */
-    deleteProductById)
+   isAuthenticated,
+   deleteProductById)
 
   module.exports = router;
